@@ -35,8 +35,8 @@ interface DepartureSchedule {
   };
 }
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
-const WP_API_BASE_URL = 'https://immersivetrips.in/wp-json/wp/v2';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const WP_API_BASE_URL = process.env.REACT_APP_WORDPRESS_URL ? `${process.env.REACT_APP_WORDPRESS_URL}/wp-json/wp/v2` : 'https://immersivetrips.in/wp-json/wp/v2';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
